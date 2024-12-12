@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash Terminal Shortcuts</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #00ff99;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+            }
+            50% {
+                text-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99;
+            }
+        }
+
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 90%;
+            background-color: #008080;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #004d4d;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #006666;
+        }
+
+        tr:hover {
+            background-color: #004d4d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1a1a1a;
+            color: #ccc;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        a {
+            color: #00ff99;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bash Commands and Shortcuts</h1>
+    </header>
+    <div class="content">
+        <h2>Move Cursor</h2>
+        <table>
+            <tr><th>Shortcut</th><th>Action</th></tr>
+            <tr><td>Ctrl + a</td><td>Go to the beginning of the line (Home)</td></tr>
+            <tr><td>Ctrl + e</td><td>Go to the End of the line (End)</td></tr>
+            <tr><td>Alt + b</td><td>Back (left) one word</td></tr>
+            <tr><td>Alt + f</td><td>Forward (right) one word</td></tr>
+            <tr><td>Ctrl + f</td><td>Forward one character</td></tr>
+            <tr><td>Ctrl + b</td><td>Backward one character</td></tr>
+            <tr><td>Ctrl + xx</td><td>Toggle between the start of line and current cursor position</td></tr>
+        </table>
+
+        <h2>Edit</h2>
+        <table>
+            <tr><th>Shortcut</th><th>Action</th></tr>
+            <tr><td>Ctrl + u</td><td>Cut the line before the cursor position</td></tr>
+            <tr><td>Alt + Del</td><td>Delete the Word before the cursor</td></tr>
+            <tr><td>Alt + d</td><td>Delete the Word after the cursor</td></tr>
+            <tr><td>Ctrl + d</td><td>Delete character under the cursor</td></tr>
+            <tr><td>Ctrl + h</td><td>Delete character before the cursor (backspace)</td></tr>
+            <tr><td>Ctrl + w</td><td>Cut the Word before the cursor to the clipboard</td></tr>
+            <tr><td>Ctrl + k</td><td>Cut the Line after the cursor to the clipboard</td></tr>
+            <tr><td>Alt + t</td><td>Swap current word with previous</td></tr>
+            <tr><td>Ctrl + t</td><td>Swap the last two characters before the cursor (typo)</td></tr>
+            <tr><td>Esc + t</td><td>Swap the last two words before the cursor.</td></tr>
+            <tr><td>Ctrl + y</td><td>Paste the last thing to be cut (yank)</td></tr>
+            <tr><td>Alt + u</td><td>UPPER capitalize every character from the cursor to the end of the current word.</td></tr>
+            <tr><td>Alt + l</td><td>Lower the case of every character from the cursor to the end of the current word.</td></tr>
+            <tr><td>Alt + c</td><td>Capitalize the character under the cursor and move to the end of the word.</td></tr>
+            <tr><td>Alt + r</td><td>Cancel the changes and put back the line as it was in the history (revert)</td></tr>
+            <tr><td>Сtrl + _</td><td>Undo</td></tr>
+        </table>
+
+        <h2>History</h2>
+        <table>
+            <tr><th>Shortcut</th><th>Action</th></tr>
+            <tr><td>Ctrl + r</td><td>Recall the last command including the specified character(s)</td></tr>
+            <tr><td>Ctrl + p</td><td>Previous command in history</td></tr>
+            <tr><td>Ctrl + n</td><td>Next command in history</td></tr>
+            <tr><td>Ctrl + s</td><td>Go back to the next most recent command</td></tr>
+            <tr><td>Ctrl + o</td><td>Execute the command found via Ctrl+r or Ctrl+s</td></tr>
+            <tr><td>Ctrl + g</td><td>Escape from history searching mode</td></tr>
+            <tr><td>Alt + .</td><td>Use the last word of the previous command</td></tr>
+        </table>
+
+        <h2>TMUX Shortcuts</h2>
+        <table>
+            <tr><th>Shortcut</th><th>Action</th></tr>
+            <tr><td>Ctrl + b + c</td><td>Create a new window</td></tr>
+            <tr><td>Ctrl + b + n</td><td>Go to the next window</td></tr>
+            <tr><td>Ctrl + b + p</td><td>Go to the previous window</td></tr>
+            <tr><td>Ctrl + b + w</td><td>List all windows</td></tr>
+            <tr><td>Ctrl + b + d</td><td>Detach from the session</td></tr>
+            <tr><td>Ctrl + b + [</td><td>Enter scrollback mode</td></tr>
+            <tr><td>Ctrl + b + z</td><td>Zoom a panel</td></tr>
+            <tr><td>Ctrl + b + %</td><td>Split pane vertically</td></tr>
+            <tr><td>Ctrl + b + "</td><td>Split pane horizontally</td></tr>
+        </table>
+
+        <h2>Tips and Tricks</h2>
+        <ul>
+            <li>Use <strong>alias</strong> in your bash profile to create shortcuts for frequently used commands (e.g., <code>alias ll='ls -la'</code>).</li>
+            <li>Redirect output to files using <code>></code> and <code>>></code> to overwrite or append respectively.</li>
+            <li>Use <code>grep</code> for searching patterns in files (e.g., <code>grep "error" log.txt</code>).</li>
+            <li>Combine commands with <code>;</code> or conditionally execute with <code>&&</code> and <code>||</code>.</li>
+            <li>Press <strong>Tab</strong> for auto-completion of commands, paths, and filenames.</li>
+            <li>Use <code>chmod</code> and <code>chown</code> for file permissions and ownership.</li>
+            <li>Use <code>scp</code> for secure file transfer between systems.</li>
+            <li>Use <code>df -h</code> and <code>du -sh</code> to check disk usage.</li>
+            <li>Use <code>uptime</code> to view system load and <code>htop</code> for an interactive process view.</li>
+            <li>Regularly update and upgrade your system using <code>sudo apt update && sudo apt upgrade</code>.</li>
+
+            <li>Use <strong>alias</strong> in your bash profile to create shortcuts for frequently used commands (e.g., <code>alias ll='ls -la'</code>).</li>
+            <li>Redirect output to files using <code>></code> and <code>>></code> to overwrite or append respectively.</li>
+            <li>Use <code>grep</code> for searching patterns in files (e.g., <code>grep "error" log.txt</code>).</li>
+            <li>Combine commands with <code>;</code> or conditionally execute with <code>&&</code> and <code>||</code>.</li>
+            <li>Press <strong>Tab</strong> for auto-completion of commands, paths, and filenames.</li>
+            <li>Use <code>chmod</code> and <code>chown</code> for file permissions and ownership.</li>
+            <li>Use <code>scp</code> for secure file transfer between systems.</li>
+            <li>Use <code>df -h</code> and <code>du -sh</code> to check disk usage.</li>
+            <li>Use <code>uptime</code> to view system load and <code>htop</code> for an interactive process view.</li>
+            <li>Regularly update and upgrade your system using <code>sudo apt update && sudo apt upgrade</code>.</li>
+            <li>Use <code>Ctrl + z</code> to suspend a process and <code>fg</code> to bring it back.</li>
+            <li>Combine <code>find</code> with <code>exec</code> to perform operations on files (e.g., <code>find . -name "*.txt" -exec rm {} \;</code>).</li>
+            <li>Use <code>watch</code> to run a command periodically (e.g., <code>watch -n 1 ls</code>).</li>
+            <li>Master <code>rsync</code> for fast and efficient file synchronization.</li>
+            <li>Use <code>ln</code> to create symbolic or hard links to files and directories.</li>
+            <li>Enable colored output in tools like <code>ls</code> by adding <code>alias ls='ls --color=auto'</code> in your bash profile.</li>
+            <li>Combine <code>tar</code> and compression utilities like <code>gzip</code> or <code>bzip2</code> to handle archives (e.g., <code>tar -cvzf archive.tar.gz folder/</code>).</li>
+            <li>Explore and configure <code>.bashrc</code> or <code>.zshrc</code> for a personalized shell environment.</li>
+            <li>Use <code>ctrl + r</code> to search your bash history interactively.</li>
+        
+
+        </ul>
+    </div>
+    <footer>
+        <p>© 2024 Bash Commands Viewer | <a href="https://www.gnu.org/software/bash/manual/">Learn More</a></p>
+    </footer>
+</body>
+</html>
